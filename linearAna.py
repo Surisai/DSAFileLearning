@@ -11,6 +11,11 @@ def linear_search(my_list, key):
             return i
     print("Not found")
     return -1
+#case find the number in the middle 
+#T(n) = n/2+ 2+ n/2 + 1 + n + 1
+
+
+
 
 # Test with n = 10
 my_list = [5, 8, 2, 9, 0, 3, 1, 6, 7, 4]

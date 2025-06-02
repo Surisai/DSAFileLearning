@@ -73,17 +73,30 @@ def linear_search(arr, target):
     for i in range(len(arr)): #1 + 1 + n
         if arr[i] == target:  #n
             return i          #0 
-    return -1                 #1
-
-
+    return -1                 #1 , if it is fualt 
+# T(n) = 3+ 2n, T(n) is O(n)
 #-------------------------------------
-# Example 8:
-s=0 #1 
-for i in range(n): #n+1
-    for j in range(n): #n(n+1)
-        k = 1          #n*n
-        while k < n:   # n*n*log n
-            s = s +i + j+ k   #4*n*n log(n)
-            k= k * 2          #n*n*2log(n)
-T(n)=..............
-O(n^2log(n))
+# Example 8
+s = 0 # 1
+for i in range(n): # n +1 
+    for j in range(n): # n(n+1)
+        k = 1 # n^2<-- for i and j so n*n
+        while k < n: # n^2logn
+            s = s + i + j + k # 4(n^2logn)
+            k = k * 2 # 2(n^2logn)
+#T(n) = 2 + 2n + 2n^2 +6n^2logn 
+
+
+
+# Example 9 (bubble sort-like)
+def function3(lst):
+    for i in range(0, len(lst) - 1): # n
+        for j in range(0, len(lst) - 1 - i):#  n(n-1)/2 + n-1
+            if lst[j] > lst[j + 1]:  # n(n-1)/2 + (n-1)
+                tmp = lst[j] # n(n-1)/2 + (n-1)
+                lst[j] = lst[j + 1] # n(n-1)/2 
+                lst[j + 1] = tmp  #(n-1)/2 
+    #T(n) = n + (n^2 -n) /2 + n-1 + 4((n^2 - n) /2)
+        
+
+
