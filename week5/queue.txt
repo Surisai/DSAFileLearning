@@ -1,0 +1,74 @@
+
+
+###Queue - single. pointer
+push_front (add-front) = O( 1)
+push_back (add-back)  = O(n)
+
+pop_front(remove-front)  = O(1)
+pop_back (remove-back) = O(n)
+
+
+
+####Doubly pointer
+Queue – Doubly Linked List
+#Operation	#Time Complexity
+push_front	O(1)
+push_back	O(1) ✅ improved
+pop_front	O(1)
+pop_back	O(1) ✅ improved
+
+
+####Stack - singly pointer
+push_front (add-front) = O(1)
+push_back (add-back)  = O(n)
+
+pop_front(remove-front)  = O(1)
+pop_back (remove-back) = O(n)
+
+
+#####Stack - DoublyPointer
+#Operation	#Time Complexity
+push_front	O(1)
+push_back	O(1) ✅ improved
+pop_front	O(1)
+pop_back	O(1) ✅ improved
+
+
+
+####linked listed - Single pointer
+push_front (add-front) = O(1)
+push_back (add-back)  = O(n)
+
+pop_front(remove-front)  = O(1)
+pop_back (remove-back) = O(n)
+
+####Linked listed - Doubly
+#Operation	#Time Complexity
+push_front	O(1)
+push_back	O(1) ✅ improved
+pop_front	O(1)
+pop_back	O(1) ✅ improved
+
+# Singly Linked List
+# 1. We have first (front) pointer only
+# push_front: O(1)
+# push_back: O(n)<<<<<<<
+# pop_front: O(1)
+# pop_back: O(n)
+
+# 2. we have first and last pointer (front and back)
+# push_front: O(1)
+# push_back: O(1)<<<<<<<<<<<<<
+# pop_front: O(1)
+# pop_back: O(n
+
+
+####Doubly pointer
+Queue – Doubly Linked List
+Operation	Time Complexity
+push_front	O(1)
+push_back	O(1) ✅ improved
+pop_front	O(1)
+pop_back	O(1) ✅ improved
+
+
