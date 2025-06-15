@@ -60,7 +60,7 @@ pop_back	O(1) ✅ improved
 # push_front: O(1)
 # push_back: O(1)<<<<<<<<<<<<<
 # pop_front: O(1)
-# pop_back: O(n
+# pop_back: O(n) <<<<<<<<<<<<<<coz we need to organize the data so we need to access the data 
 
 
 ####Doubly pointer
@@ -71,4 +71,6 @@ push_back	O(1) ✅ improved
 pop_front	O(1)
 pop_back	O(1) ✅ improved
 
+
+#####
 
