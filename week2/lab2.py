@@ -1,16 +1,16 @@
 
 def one(mylist, key):
-	total = 0 # 1 
-	for i in range(len(mylist)): #  n + n-1
-		for j in range(i+1,len(mylist)):   # n-1 + 1(n-1) +2(n-2) + 1
-			if i != j:  # n-1 
-				if mylist[i] + mylist[j] == key: # 
-					total += 1
-	return total
+	total = 0 #
+	for i in range(len(mylist)): #  
+		for j in range(i+1,len(mylist)): #3
+			if i != j:  #
+				if mylist[i] + mylist[j] == key: #2
+					total += 1 # 
+	return total # 
 
 def two(mylist, key):
-	total = 0
-	mylist.sort()
+	total = 0 # 1 
+	mylist.sort() # logn
 	i = 0
 	j = len(mylist)-1
 	while (i < j):

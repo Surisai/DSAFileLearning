@@ -19,8 +19,8 @@ while i < n: # n
     s = s + i   #2(n-1) 
     i=i+1       #2(n-1) 
 
-T(n)= 1+1+n+2(n-1)+2(n-1)= 5n + 2-1-2-2=5n-2
-T(n) is O(n)
+# T(n)= 1+1+n+2(n-1)+2(n-1)= 5n + 2-1-2-2=5n-2
+# T(n) is O(n)
 
 # Example 1
 s = 0  #1
@@ -65,9 +65,9 @@ s = 0  #1
 for i in range(0,n,-1): # 1+n
     for j in range(n): #(1+n)n
         s = s + i + j  # 3*n*n
-T(n)=1+ 1+n +(1+n)n+3*n* n=3n^2 +n^2 + n+3=..........
-T(n) is O(n^2)
-#-------------------------------------
+# T(n)=1+ 1+n +(1+n)n+3*n* n=3n^2 +n^2 + n+3=..........
+# T(n) is O(n^2)
+# #-------------------------------------
 # Example 6:
 def linear_search(arr, target):
     for i in range(len(arr)): #1 + 1 + n
@@ -90,7 +90,7 @@ for i in range(n): # n +1
 
 # Example 9 (bubble sort-like)
 def function3(lst):
-    for i in range(0, len(lst) - 1): # n
+    for i in range(0, len(lst) - 1): # 3+n-1 
         for j in range(0, len(lst) - 1 - i):#  n(n-1)/2 + n-1
             if lst[j] > lst[j + 1]:  # n(n-1)/2 + (n-1)
                 tmp = lst[j] # n(n-1)/2 + (n-1)

@@ -45,7 +45,7 @@ for i in range(0,n, -1): # count by reverse of number -1 . ( 1 + n )
         s = s +i +j # 3*n*n
 
     # T(n) = 
-    # T(n) is O(n)
+    # T(n) is O(n^2)
 
 #---------------------
 #example 6
@@ -61,11 +61,11 @@ def binary_search(my_list, key):
     while rc == -1 and low <= high: # 
         mid = (low + high) // 2  # 3 *
         if key < my_list[mid]:  # 1
-            high = mid - 1 # 2
+            high = mid - 1 # 2(1+logn)
         elif key > my_list[mid]: # 0 coz if condition execute 
             low = mid + 1 # 0
-        else:       # 
-            rc = mid # 
+        else:       # 0
+            rc = mid # 0
 
     return rc
 
