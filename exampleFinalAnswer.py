@@ -27,6 +27,135 @@
                 _print_between(node.right)
         _print_between(self.root)
 # ```
+def print_between_descending(self, min_val, max_val):
+    def helper(node):
+        if node is None:
+            return
+        if node.value < min_val:
+            helper(node.right)
+        elif node.value > max_val:
+            helper(node.left)
+        else:
+            # Traverse right first to get larger values first
+            helper(node.right)
+            print(node.value)
+            helper(node.left)
+    helper(self.root)
+#########Example full code
+    class BST:
+    class Node:
+        def __init__(self, value=None, left=None, right=None):
+            self.value = value
+            self.left = left
+            self.right = right
+
+    def __init__(self):
+        self.root = None
+
+    # Insert helper to build the BST for testing
+    def insert(self, value):
+        def _insert(node, value):
+            if node is None:
+                return self.Node(value)
+            elif value < node.value:
+                node.left = _insert(node.left, value)
+            else:
+                node.right = _insert(node.right, value)
+            return node
+        self.root = _insert(self.root, value)
+
+    # Method to print values between min and max in descending order
+    def print_between_descending(self, min_val, max_val):
+        def helper(node):
+            if node is None:
+                return
+            if node.value < min_val:
+                helper(node.right)
+            elif node.value > max_val:
+                helper(node.left)
+            else:
+                helper(node.right)
+                print(node.value)
+                helper(node.left)
+        helper(self.root)
+
+# ---------- TEST CODE BELOW ----------
+
+# Create BST and insert values
+tree = BST()
+values_to_insert = [50, 30, 70, 20, 40, 60, 80, 35, 45, 65, 75]
+for val in values_to_insert:
+    tree.insert(val)
+
+# Print values between 35 and 70 in descending order
+print("Values between 35 and 70 (descending):")
+tree.print_between_descending(35, 70)
+#--------Test 
+class BST:
+    class Node:
+        def __init__(self, value=None, left=None, right=None):
+            self.value = value
+            self.left = left
+            self.right = right
+
+    def __init__(self):
+        self.root = None
+
+    # Insert helper to build the BST for testing
+    def insert(self, value):
+        def _insert(node, value):
+            if node is None:
+                return self.Node(value)
+            elif value < node.value:
+                node.left = _insert(node.left, value)
+            else:
+                node.right = _insert(node.right, value)
+            return node
+        self.root = _insert(self.root, value)
+
+    # Descending order: Right → Node → Left
+    def print_between_descending(self, min_val, max_val):
+        def helper(node):
+            if node is None:
+                return
+            if node.value < min_val:
+                helper(node.right)
+            elif node.value > max_val:
+                helper(node.left)
+            else:
+                helper(node.right)
+                print(node.value)
+                helper(node.left)
+        helper(self.root)
+
+    # Ascending order: Left → Node → Right
+    def print_between_ascending(self, min_val, max_val):
+        def helper(node):
+            if node is None:
+                return
+            if node.value > min_val:
+                helper(node.left)
+            if min_val <= node.value <= max_val:
+                print(node.value)
+            if node.value < max_val:
+                helper(node.right)
+        helper(self.root)
+
+# ---------- TEST CODE ----------
+
+# Create BST and insert values
+tree = BST()
+values_to_insert = [50, 30, 70, 20, 40, 60, 80, 35, 45, 65, 75]
+for val in values_to_insert:
+    tree.insert(val)
+
+# Test ascending
+print("Values between 35 and 70 (ascending):")
+tree.print_between_ascending(35, 70)
+
+# Test descending
+print("\nValues between 35 and 70 (descending):")
+tree.print_between_descending(35, 70)
 
 # **6. BT: height()**
 
@@ -38,6 +167,71 @@
             return 1 + max(_height(node.left), _height(node.right))
         return _height(self.root)
 # ```
+#---- full code
+class BT:
+    class Node:
+        def __init__(self, value=None, left=None, right=None):
+            self.value = value
+            self.left = left
+            self.right = right
+
+    def __init__(self):
+        self.root = None
+
+    # Insert helper to build a binary tree manually (not BST logic)
+    def insert_level_order(self, values):
+        """Insert nodes into the binary tree in level-order (left to right)."""
+        from collections import deque
+        if not values:
+            return
+
+        self.root = self.Node(values[0])
+        queue = deque([self.root])
+        i = 1
+
+        while i < len(values):
+            current = queue.popleft()
+            if values[i] is not None:
+                current.left = self.Node(values[i])
+                queue.append(current.left)
+            i += 1
+
+            if i < len(values) and values[i] is not None:
+                current.right = self.Node(values[i])
+                queue.append(current.right)
+            i += 1
+
+    # Height of the binary tree
+    def height(self):
+        def helper(node):
+            if node is None:
+                return -1  # height of an empty tree is -1
+            left_height = helper(node.left)
+            right_height = helper(node.right)
+            return 1 + max(left_height, right_height)
+
+        return helper(self.root)
+## low case
+# Inside the BT class
+def min_depth(self):
+    def helper(node):
+        if node is None:
+            return 0
+        # If one of the children is None, ignore it in min comparison
+        if node.left is None and node.right is not None:
+            return 1 + helper(node.right)
+        if node.right is None and node.left is not None:
+            return 1 + helper(node.left)
+        return 1 + min(helper(node.left), helper(node.right))
+    return helper(self.root)
+#Test
+# Same tree as before
+tree = BT()
+tree.insert_level_order([10, 20, 30, 40, 50, None, 60, None, None, 70])
+
+# Test max height and min depth
+print("Height (max depth):", tree.height())     # Expected: 3
+print("Minimum depth:", tree.min_depth())       # Expected: 2 (10 → 30 → 60)
 
 # **7a. Adjacency Matrix and List**
 # Let A-B, A-D, B-C, C-E, D-E, E-F, F-G be edges.
@@ -132,6 +326,35 @@
 #                 break
 #         return successor
 # ```
+def inorder_successor(self, value):
+    def find(node, value):
+        if node is None:
+            return None
+        if value < node.value:
+            return find(node.left, value)
+        elif value > node.value:
+            return find(node.right, value)
+        else:
+            return node
+
+    def min_value(node):
+        while node.left:
+            node = node.left
+        return node
+
+    current = self.root
+    successor = None
+    while current:
+        if value < current.value:
+            successor = current
+            current = current.left
+        elif value > current.value:
+            current = current.right
+        else:
+            if current.right:
+                return min_value(current.right)
+            break
+    return successor
 
 # **16. Can you write a program to check for infinite loops?**
 # No, in general this is not possible. This is known as the Halting Problem, proven undecidable by Alan Turing. No algorithm can determine for all programs whether they will halt or loop forever.
