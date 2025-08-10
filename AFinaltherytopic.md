@@ -30,7 +30,8 @@ Topics:
 - **Trees**  
   - Definitions: leaf, root, sibling, height, depth, complete, traversals, branches, etc.
 
-- **Binary Search Tree (BST)**  
+- **Binary Search Tree (BST)**
+  - Binary search trees (BST) are binary trees where values are placed in a way that supports efficient searching. In a BST, all values in the left subtree value in current node < all values in the right subtree. This rule must hold for EVERY subtree,
   - Be able to implement functions for BSTs including both depth-first and breadth-first traversals  
   - Be able to use drawings to show how to perform insertions/removals  
   - Be able to list nodes by all traversal orders (pre-order, post-order, in-order, breadth-first)
