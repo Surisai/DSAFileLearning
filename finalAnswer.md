@@ -23,6 +23,16 @@ A hash table (dictionary/map) is ideal, using phone numbers as keys and names as
 ## 4. Can you binary search a sorted linked list?
 
 Not efficiently. Binary search needs direct access to the middle element, but linked lists require traversal from the head, resulting in **O(n)** time instead of **O(log n)**.
+Short answer:
+No, you cannot efficiently perform binary search on a sorted singly linked list.
+
+Explanation:
+Binary search requires random access to the middle element of the data structure to divide the search space in half at each step. In an array, accessing the middle element is O(1) because of direct indexing.
+
+However, a linked list (even if sorted) does not support random access — to get to the middle element, you must traverse from the head node, which takes O(n) time. So each step of the binary search takes O(n), making the overall search O(n log n), which is worse than a simple linear search O(n).
+
+A Binary Search Tree (BST) is a different data structure that provides a linked structure allowing binary search-like behavior because it branches left or right based on value comparisons. But a simple sorted linked list is linear and cannot support this efficiently.
+
 
 ---
 
